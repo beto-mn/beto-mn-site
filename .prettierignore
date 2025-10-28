@@ -1,0 +1,24 @@
+# Files and directories that Prettier should ignore
+.nuxt
+.output
+dist
+build
+node_modules
+.pnpm-store
+.yarn
+.npm
+
+# Configuration files that don't need formatting
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Generated files
+*.log
+.DS_Store
+.env
+.env.*
+
+# Documentation files with specific format
+CHANGELOG.md
+LICENSE
