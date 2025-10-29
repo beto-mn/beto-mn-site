@@ -1,121 +1,50 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
-    <!-- Header de prueba -->
-    <header class="bg-primary shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center py-6">
-          <h1 class="text-3xl font-bold text-gray-900">Beto Portfolio</h1>
-          <nav class="space-x-4">
-            <button class="btn btn-secondary">Inicio</button>
-            <button class="btn btn-primary">Contacto</button>
-          </nav>
-        </div>
-      </div>
-    </header>
-
-    <!-- Contenido principal -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="text-center">
-        <h2
-          class="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl"
-        >
-          ¡Tailwind CSS está
-          <span class="text-primary-600">funcionando!</span>
-        </h2>
-        <p
-          class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
-        >
-          Tu configuración de Tailwind CSS está lista para usar.
-        </p>
-        <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-          <div class="rounded-md shadow">
-            <button
-              class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 md:py-4 md:text-lg md:px-10 transition-colors duration-200"
-            >
-              Empezar proyecto
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Grid de prueba -->
-      <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="bg-white overflow-hidden shadow rounded-lg">
-          <div class="p-6">
-            <div class="flex items-center">
-              <div class="flex-shrink-0">
-                <div
-                  class="w-8 h-8 bg-primary-500 rounded-md flex items-center justify-center"
-                >
-                  <span class="text-white font-semibold">1</span>
-                </div>
-              </div>
-              <div class="ml-5 w-0 flex-1">
-                <dl>
-                  <dt class="text-sm font-medium text-gray-500 truncate">
-                    Responsive Design
-                  </dt>
-                  <dd class="text-lg font-medium text-gray-900">
-                    Mobile First
-                  </dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white overflow-hidden shadow rounded-lg">
-          <div class="p-6">
-            <div class="flex items-center">
-              <div class="flex-shrink-0">
-                <div
-                  class="w-8 h-8 bg-green-500 rounded-md flex items-center justify-center"
-                >
-                  <span class="text-white font-semibold">2</span>
-                </div>
-              </div>
-              <div class="ml-5 w-0 flex-1">
-                <dl>
-                  <dt class="text-sm font-medium text-gray-500 truncate">
-                    Utility Classes
-                  </dt>
-                  <dd class="text-lg font-medium text-gray-900">
-                    Rapid Development
-                  </dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white overflow-hidden shadow rounded-lg">
-          <div class="p-6">
-            <div class="flex items-center">
-              <div class="flex-shrink-0">
-                <div
-                  class="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center"
-                >
-                  <span class="text-white font-semibold">3</span>
-                </div>
-              </div>
-              <div class="ml-5 w-0 flex-1">
-                <dl>
-                  <dt class="text-sm font-medium text-gray-500 truncate">
-                    Custom Components
-                  </dt>
-                  <dd class="text-lg font-medium text-gray-900">
-                    Reusable Styles
-                  </dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <!-- <NuxtRouteAnnouncer /> -->
-    <!-- <NuxtWelcome /> -->
-    <!-- Testing lint-staged configuration -->
+  <div class="font-sans">
+    <NuxtPage />
   </div>
 </template>
+
+<style>
+/* Import SF Pro from the system (macOS) or fallback */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-family:
+    'SF Pro Display', 'SF Pro Text', '-apple-system', 'BlinkMacSystemFont',
+    'Inter', 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* If you have SF Pro installed locally */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display'), local('SFProDisplay-Regular');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display Medium'), local('SFProDisplay-Medium');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display Semibold'), local('SFProDisplay-Semibold');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display Bold'), local('SFProDisplay-Bold');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
