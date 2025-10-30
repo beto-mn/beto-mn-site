@@ -98,40 +98,28 @@
           <a
             href="#hero"
             class=""
-            @click="
-              scrollToSection('hero')
-              mobileMenuOpen = false
-            "
+            @click="navigateToSection('hero')"
           >
             Home
           </a>
           <a
             href="#about"
             class=""
-            @click="
-              scrollToSection('about')
-              mobileMenuOpen = false
-            "
+            @click="navigateToSection('about')"
           >
             About
           </a>
           <a
             href="#projects"
             class=""
-            @click="
-              scrollToSection('projects')
-              mobileMenuOpen = false
-            "
+            @click="navigateToSection('projects')"
           >
             Projects
           </a>
           <a
             href="#contact"
             class=""
-            @click="
-              scrollToSection('contact')
-              mobileMenuOpen = false
-            "
+            @click="navigateToSection('contact')"
           >
             Contact
           </a>
@@ -155,6 +143,12 @@ const scrollToSection = (sectionId: string) => {
       block: 'start',
     })
   }
+}
+
+// Function to navigate and close mobile menu
+const navigateToSection = (sectionId: string) => {
+  scrollToSection(sectionId)
+  mobileMenuOpen.value = false
 }
 
 // Close mobile menu on scroll
