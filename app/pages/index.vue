@@ -1,7 +1,57 @@
 <template>
-  <div class="bg-dark min-h-screen w-full">
-    <ui-header />
+  <div class="relative min-h-screen w-full overflow-hidden bg-void-black">
+    <div class="absolute inset-0 overflow-hidden">
+      <!-- Gradient Orbs -->
+      <div
+        class="absolute left-1/2 -top-[28rem] transform -translate-x-1/2 w-[40rem] h-[40rem] rounded-full blur-[70px] bg-gradient-move"
+      />
+      <div
+        class="absolute top-3/4 left-0 transform -translate-x-1/2 w-96 h-96 bg-quantum-blue/50 rounded-full blur-3xl"
+      />
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10">
+      <ui-header />
+    </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// Page meta
+useHead({
+  title: 'Roberto Mirón Nájera',
+  meta: [
+    {
+      name: 'Description',
+      content:
+        'Full Stack Developer passionate about creating exceptional digital experiences with TypeScript, AWS, Node.js, Terraform, and GraphQL.',
+    },
+  ],
+})
+</script>
+
+<style scoped>
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient-move {
+  background: linear-gradient(
+    270deg,
+    rgba(219, 40, 121, 0.6),
+    rgba(156, 32, 187, 0.6),
+    rgba(219, 40, 121, 0.6)
+  );
+  background-size: 200% 200%;
+  animation: gradient-move 8s ease infinite;
+}
+</style>
