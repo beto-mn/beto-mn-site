@@ -13,6 +13,8 @@
     <!-- Content -->
     <div class="relative z-10">
       <ui-header />
+
+      <sections-hero />
     </div>
   </div>
 </template>
