@@ -17,10 +17,10 @@ fi
 MSG=$(cat "$MSG_FILE")
 
 # Common gitmoji patterns (expand as needed)
-GITMOJI_PATTERN="[✨🐛🔧📝🎨🚀🔥💚👷🔒⬆️⬇️📌🎉🔖🚨💄♻️🔨🌐💡🗃️🏗️📱⚡🍱♿🔊🔇🃏🩹🧐⚰️🧪👔🩺🔐🏷️🌱🚩🥅💫🗑️]"
+GITMOJI_PATTERN="[✨🐛🔧📝🎨🚀🔥💚👷🔒⬆️⬇️📌🎉🔖🚨💄♻️🔨🌐💡🗃️🏗️📱⚡🍱♿🔊🔇🃏🩹🧐⚰️🧪👔🩺🔐🏷️🌱🚩🥅💫🗑️🔀]"
 
 # Strict regex: gitmoji + space + type + optional(scope) + colon + space + lowercase subject
-echo "$MSG" | grep -Eq "^${GITMOJI_PATTERN} (feat|fix|docs|chore|perf|refactor|style|test|build|ci)(\([^)]+\))?: [a-z]"
+echo "$MSG" | grep -Eq "^${GITMOJI_PATTERN} (feat|fix|docs|chore|perf|refactor|style|test|build|ci|config|merge)(\([^)]+\))?: [a-z]"
 
 if [ $? -ne 0 ]; then
   echo "\n✘ Commit message must follow the STRICT gitmoji + conventional commits format."
