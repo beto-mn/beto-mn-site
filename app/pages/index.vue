@@ -6,7 +6,7 @@
         class="absolute left-1/2 -top-[28rem] transform -translate-x-1/2 w-[40rem] h-[40rem] rounded-full blur-[70px] bg-gradient-move"
       />
       <div
-        class="absolute top-3/4 left-0 transform -translate-x-1/2 w-96 h-96 bg-quantum-blue/50 rounded-full blur-3xl"
+        class="absolute top-[45rem] left-0 transform -translate-x-1/2 w-96 h-96 bg-quantum-blue/50 rounded-full blur-3xl"
       />
     </div>
 
@@ -15,6 +15,7 @@
       <ui-header />
 
       <sections-hero />
+      <sections-about />
     </div>
   </div>
 </template>
