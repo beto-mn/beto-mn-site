@@ -1,5 +1,6 @@
 <template>
   <section
+    id="hero"
     class="flex flex-col md:flex-row items-center justify-evenly min-h-screen px-8 text-white"
   >
     <div class="flex flex-col">
@@ -14,10 +15,10 @@
 
         <div class="relative overflow-hidden w-full max-w-md">
           <div
-            class="pointer-events-none absolute left-0 top-0 h-full w-48 bg-gradient-to-r from-black to-transparent z-10"
+            class="pointer-events-none absolute left-0 top-0 h-full w-48 bg-gradient-to-r from-void-black to-transparent z-10"
           />
           <div
-            class="pointer-events-none absolute right-0 top-0 h-full w-48 bg-gradient-to-l from-black to-transparent z-10"
+            class="pointer-events-none absolute right-0 top-0 h-full w-48 bg-gradient-to-l from-void-black to-transparent z-10"
           />
 
           <div class="flex animate-marquee">
@@ -51,20 +52,18 @@
 
       <div>
         <div class="flex gap-4 mt-20">
-          <button
-            class="px-6 py-5 rounded-full text-white font-medium backdrop-blur-lg bg-white/10 border border-white/20 shadow-xl overflow-hidden transition-all duration-500 hover:bg-white/20 hover:scale-[1.02]"
-          >
+          <ui-button variant="primary" size="lg" href="#contact">
             Got a project?
-          </button>
-          <button
-            class="relative p-[1px] rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 hover:from-purple-400 hover:via-pink-400 hover:to-indigo-400 transition"
+          </ui-button>
+
+          <ui-button
+            variant="gradient"
+            size="lg"
+            href="/downloads/resume.pdf"
+            download
           >
-            <span
-              class="block px-6 py-5 rounded-full bg-black text-white font-medium hover:bg-black/80 transition-colors duration-300"
-            >
-              Download Resume
-            </span>
-          </button>
+            Download Resume
+          </ui-button>
         </div>
       </div>
     </div>
@@ -73,7 +72,7 @@
     <div class="relative mt-12 md:mt-0">
       <div class="absolute inset-0 bg-electric-blue rounded-full blur-3xl" />
       <img
-        src="/photo.jpg"
+        src="/images/photo.jpg"
         alt="Roberto"
         class="relative rounded-full w-80 h-80 object-cover shadow-2xl"
       />
