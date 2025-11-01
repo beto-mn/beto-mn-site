@@ -50,7 +50,7 @@ if [ $? -ne 0 ]; then
   echo "📚 Common gitmoji + types:"
   echo "   ✨ feat    🐛 fix     📝 docs    🎨 style"
   echo "   🚀 deploy  🔧 chore   💚 ci     👷 build"
-  echo "   🔥 remove  ♻️  refactor 🔒 security ⬆️  deps"
+  echo "   🔥 remove  ♻️ refactor 🔒 security ⬆️ deps"
   echo ""
   exit 1
 fi
