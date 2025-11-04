@@ -8,7 +8,7 @@
       <div
         class="absolute top-[45rem] left-0 transform -translate-x-1/2 w-96 h-96 bg-quantum-blue/50 rounded-full blur-3xl"
       />
-     <div
+      <div
         class="absolute left-1/2 top-[100rem] transform -translate-x-1/2 w-[50rem] h-[50rem] rounded-full blur-[100px] bg-gradient-move-02"
       />
     </div>

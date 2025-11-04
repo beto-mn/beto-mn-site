@@ -1,10 +1,10 @@
 <template>
   <section
     id="about"
-    class="relative text-white flex flex-col justify-center items-center overflow-x-hidden overflow-y-visible py-20"
+    class="relative text-white flex flex-col justify-center items-center overflow-x-hidden overflow-y-visible py-10"
   >
     <div
-      class="relative flex flex-col items-center justify-center mb-40 text-center"
+      class="relative flex flex-col items-center justify-center mb-32 text-center"
     >
       <img
         src="/images/memoji-01.svg"
@@ -19,7 +19,7 @@
         class="pointer-events-none select-none absolute top-36 -right-24 w-[10rem] -z-10"
       />
 
-      <h3 class="text-xl mb-16">
+      <h3 class="text-xl mb-10">
         Who
         <span
           class="font-bold bg-gradient-to-r from-cyber-void to-neon-cyan bg-clip-text text-transparent animate-gradient"
@@ -41,7 +41,7 @@
 
     <div class="relative flex flex-col items-center justify-center">
       <div>
-        <h3 class="text-xl mb-16">
+        <h3 class="text-xl mb-10">
           What
           <span
             class="font-bold bg-gradient-to-r from-cyber-void to-neon-cyan bg-clip-text text-transparent animate-gradient"
@@ -69,67 +69,80 @@
 <script setup lang="ts">
 const knowledge = [
   {
-    title: 'Front-End 🎨',
+    title: '🎨 Front-End',
     description:
-      'I design and build fast, accessible, and user-friendly interfaces optimized for any device.',
-    stack: ['graphql'],
-    tag: 'Clean Architecture',
+      'I design and build fast, accessible, and responsive interfaces focused on delivering the best user experience.',
+    stack: ['react', 'next', 'vue', 'nuxt', 'tailwindcss'],
+    tag: [],
   },
   {
-    title: 'Front-End 🎨',
+    title: '🏗️ Software Architecture & Design',
     description:
-      'I design and build fast, accessible, and user-friendly interfaces optimized for any device.',
-    stack: ['graphql'],
-    tag: 'Clean Architecture',
+      'I design clean, modular, and scalable architectures that allow projects to evolve without sacrificing stability.',
+    stack: [],
+    tag: [
+      'Microservicios',
+      'Event-Driven',
+      'Clean Architecture',
+      'REST APIs',
+      'Domain-Driven Design (DDD)',
+    ],
   },
   {
-    title: 'Front-End 🎨',
+    title: '⚙️ Back-End',
     description:
-      'I design and build fast, accessible, and user-friendly interfaces optimized for any device.',
-    stack: ['graphql'],
-    tag: 'Clean Architecture',
+      'I build scalable, secure, and maintainable systems that efficiently handle data, processes, and business logic.',
+    stack: [
+      'nodejs',
+      'nestjs',
+      'express',
+      'typescript',
+      'javascript',
+      'go',
+      'python',
+    ],
+    tag: [],
   },
   {
-    title: 'Front-End 🎨',
+    title: '🗄️ Data Base',
     description:
-      'I design and build fast, accessible, and user-friendly interfaces optimized for any device.',
-    stack: ['graphql'],
-    tag: 'Clean Architecture',
+      'I design and manage secure, optimized databases with structures built for performance and scalability.',
+    stack: ['postresql', 'mysql', 'mongodb', 'redis', 'prisma'],
+    tag: ['DynamoDB'],
   },
-  // {
-  //   title: 'Front-End 🎨',
-  //   description:
-  //     'I design and build fast, accessible, and user-friendly interfaces optimized for any device.',
-  //   stack: ['graphql', 'react', 'typescript'],
-  //   tag: 'Clean Architecture',
-  // },
-  // {
-  //   title: 'Front-End 🎨',
-  //   description:
-  //     'I design and build fast, accessible, and user-friendly interfaces optimized for any device.',
-  //   stack: ['graphql', 'react', 'typescript'],
-  //   tag: 'Clean Architecture',
-  // },
-  // {
-  //   title: 'Front-End 🎨',
-  //   description:
-  //     'I design and build fast, accessible, and user-friendly interfaces optimized for any device.',
-  //   stack: ['graphql', 'react', 'typescript'],
-  //   tag: 'Clean Architecture',
-  // },
-  // {
-  //   title: 'Front-End 🎨',
-  //   description:
-  //     'I design and build fast, accessible, and user-friendly interfaces optimized for any device.',
-  //   stack: ['graphql', 'react', 'typescript'],
-  //   tag: 'Clean Architecture',
-  // },
-  // {
-  //   title: 'Front-End 🎨',
-  //   description:
-  //     'I design and build fast, accessible, and user-friendly interfaces optimized for any device.',
-  //   stack: ['graphql', 'react', 'typescript'],
-  //   tag: 'Clean Architecture',
-  // },
+  {
+    title: '☁️ DevOps & Cloud',
+    description:
+      'I automate infrastructure and deploy cloud applications with CI/CD pipelines that ensure stability, availability, and efficiency.',
+    stack: ['aws', 'docker', 'kubernetes', 'terraform'],
+    tag: ['GitHub Actions'],
+  },
+  {
+    title: '🧩 Consulting & Custom Solutions',
+    description:
+      'I analyze your needs and design tailored solutions that combine strategy, architecture, and technology to achieve your goals.',
+    stack: [],
+    tag: [
+      'System design',
+      'Requirements Analysis',
+      'Technical Documentation',
+      'MVP Validation',
+      'Project Roadmaps',
+    ],
+  },
+  {
+    title: '📊 Integrations & APIs',
+    description:
+      'I develop and integrate APIs that connect platforms and automate business processes seamlessly.',
+    stack: ['graphql', 'webhook'],
+    tag: ['REST', 'gRPC', 'Websockets'],
+  },
+  {
+    title: '🔐 Security',
+    description:
+      'I implement security measures across all layers of software to protect information and comply with modern standards.',
+    stack: ['jwt', 'oauth2', 'owasp'],
+    tag: ['HTTPS', 'RBAC (Role-Based Access Control)'],
+  },
 ]
 </script>
