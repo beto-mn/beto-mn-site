@@ -1,7 +1,7 @@
 <template>
   <section
     id="about"
-    class="relative text-white flex flex-col justify-center items-center overflow-x-hidden overflow-y-visible py-10"
+    class="relative text-white flex flex-col justify-center items-center overflow-x-hidden overflow-y-visible"
   >
     <div
       class="relative flex flex-col items-center justify-center mb-32 text-center"
