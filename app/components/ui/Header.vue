@@ -1,5 +1,8 @@
 <template>
-  <header class="fixed top-0 w-full bg-transpartent z-50">
+  <header
+    class="fixed top-0 w-full bg-transpartent z-50 transition-transform duration-500 ease-in-out"
+    :class="[isHeaderVisible ? 'translate-y-0' : '-translate-y-full']"
+  >
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Mobile Layout: Flex with justify-between -->
       <div class="flex justify-between items-center py-6 px-4 md:hidden">
@@ -67,7 +70,7 @@
         <!-- Navigation Desktop - Center Column -->
         <div class="justify-self-center">
           <div
-            class="relative px-6 py-3 rounded-full text-white font-medium backdrop-blur-lg bg-white/10 border border-white/20 shadow-xl overflow-hidden transition-all duration-500 hover:bg-white/20 hover:scale-[1.02]"
+            class="relative px-6 py-3 rounded-full text-white font-medium backdrop-blur-sm border border-white/20 shadow-[inset_0_1px_5px_rgba(255,255,255,0.6),_0_20px_25px_-5px_rgba(0,0,0,0.1),_0_10px_10px_-5px_rgba(0,0,0,0.04)] overflow-hidden transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
           >
             <div class="flex items-baseline space-x-10 px-10 py-2 text-lg">
               <a href="#hero" class="" @click="scrollToSection('hero')">
@@ -112,9 +115,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const mobileMenuOpen = ref(false)
+
+// Header visibility state
+const isHoverZone = ref(false) // cursor near top of the viewport
+const isScrolling = ref(false) // recently scrolling
+const isAtTop = ref(true) // near top of page
+const isHeaderVisible = computed(
+  () =>
+    isAtTop.value ||
+    isHoverZone.value ||
+    isScrolling.value ||
+    mobileMenuOpen.value
+)
 
 // Function for smooth scrolling to sections
 const scrollToSection = (sectionId: string) => {
@@ -133,10 +148,53 @@ const navigateToSection = (sectionId: string) => {
   mobileMenuOpen.value = false
 }
 
-// Close mobile menu on scroll
+// Reveal/hide header based on scroll and cursor near top
+let scrollHideTimeout: number | undefined
+let initialShowTimeout: number | undefined
+
+const TOP_STICKY_THRESHOLD = 8
+const onScroll = () => {
+  // close mobile menu when scrolling
+  mobileMenuOpen.value = false
+
+  // mark as scrolling (show header) and schedule hide after inactivity
+  isScrolling.value = true
+  if (scrollHideTimeout) window.clearTimeout(scrollHideTimeout)
+  scrollHideTimeout = window.setTimeout(() => {
+    isScrolling.value = false
+  }, 1200)
+
+  // keep header visible when at very top
+  isAtTop.value = window.scrollY <= TOP_STICKY_THRESHOLD
+}
+
+const TOP_REVEAL_ZONE = 64 // px from top to reveal header on mouse proximity
+const onMouseMove = (e: MouseEvent) => {
+  if (e.clientY <= TOP_REVEAL_ZONE) {
+    isHoverZone.value = true
+  } else if (!mobileMenuOpen.value) {
+    isHoverZone.value = false
+  }
+}
+
 onMounted(() => {
-  window.addEventListener('scroll', () => {
-    mobileMenuOpen.value = false
-  })
+  window.addEventListener('scroll', onScroll)
+  window.addEventListener('mousemove', onMouseMove)
+
+  // initial top state
+  isAtTop.value = window.scrollY <= TOP_STICKY_THRESHOLD
+
+  // Show header briefly on load, then hide if idle
+  isScrolling.value = true
+  initialShowTimeout = window.setTimeout(() => {
+    isScrolling.value = false
+  }, 1500)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('mousemove', onMouseMove)
+  if (scrollHideTimeout) window.clearTimeout(scrollHideTimeout)
+  if (initialShowTimeout) window.clearTimeout(initialShowTimeout)
 })
 </script>

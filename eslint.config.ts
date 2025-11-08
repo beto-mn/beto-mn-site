@@ -38,6 +38,7 @@ const config = withNuxt([
       'vue/no-v-html': 'warn',
       'vue/component-definition-name-casing': ['error', 'PascalCase'],
       'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+      'vue/no-required-prop-with-default': 'off',
 
       // General rules
       'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
