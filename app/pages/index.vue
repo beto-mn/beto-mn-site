@@ -19,6 +19,8 @@
 
       <sections-hero />
       <sections-about />
+
+      <ui-footer />
     </div>
   </div>
 </template>

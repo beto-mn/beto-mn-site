@@ -8,13 +8,13 @@
     >
       <img
         src="/images/memoji-01.svg"
-        alt=""
+        alt="Beto Roberto Mirón Nájera Memoji"
         aria-hidden="true"
         class="pointer-events-none select-none absolute top-3 -left-28 w-[8rem] -z-10"
       />
       <img
         src="/images/memoji-02.svg"
-        alt=""
+        alt="Beto Roberto Mirón Nájera Memoji"
         aria-hidden="true"
         class="pointer-events-none select-none absolute top-36 -right-24 w-[10rem] -z-10"
       />
