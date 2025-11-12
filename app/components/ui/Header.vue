@@ -94,18 +94,38 @@
       </div>
 
       <!-- Mobile Navigation -->
-      <div :class="[mobileMenuOpen ? 'block' : 'hidden', 'md:hidden']">
+      <div
+        :class="[mobileMenuOpen ? 'block' : 'hidden', 'md:hidden', 'px-4 pb-4']"
+      >
         <div
-          class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200"
+          class="rounded-2xl text-white font-medium backdrop-blur-sm border border-white/20 shadow-[inset_0_1px_5px_rgba(255,255,255,0.6),_0_20px_25px_-5px_rgba(0,0,0,0.1),_0_10px_10px_-5px_rgba(0,0,0,0.04)] overflow-hidden"
         >
-          <a href="#hero" class="" @click="navigateToSection('hero')"> Home </a>
-          <a href="#about" class="" @click="navigateToSection('about')">
+          <a
+            href="#hero"
+            class="flex items-center px-6 py-4 text-lg border-b border-white/10 hover:bg-white/10 transition-colors"
+            @click="navigateToSection('hero')"
+          >
+            Home
+          </a>
+          <a
+            href="#about"
+            class="flex items-center px-6 py-4 text-lg border-b border-white/10 hover:bg-white/10 transition-colors"
+            @click="navigateToSection('about')"
+          >
             About
           </a>
-          <a href="#projects" class="" @click="navigateToSection('projects')">
+          <a
+            href="#projects"
+            class="flex items-center px-6 py-4 text-lg border-b border-white/10 hover:bg-white/10 transition-colors"
+            @click="navigateToSection('projects')"
+          >
             Projects
           </a>
-          <a href="#contact" class="" @click="navigateToSection('contact')">
+          <a
+            href="#contact"
+            class="flex items-center px-6 py-4 text-lg hover:bg-white/10 transition-colors"
+            @click="navigateToSection('contact')"
+          >
             Contact
           </a>
         </div>
@@ -134,12 +154,13 @@ const isHeaderVisible = computed(
 // Function for smooth scrolling to sections
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId)
-  if (element) {
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
-  }
+  if (!element) return
+  const headerHeight = 80
+  const top =
+    sectionId === 'hero'
+      ? 0
+      : element.getBoundingClientRect().top + window.scrollY - headerHeight
+  window.scrollTo({ top, behavior: 'smooth' })
 }
 
 // Function to navigate and close mobile menu

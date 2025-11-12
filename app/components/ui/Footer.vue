@@ -1,7 +1,7 @@
 <template>
   <footer>
     <hr class="border-white/50 my-8" />
-    <div class="py-12 px-5">
+    <div class="pt-6 pb-4 px-5">
       <!-- Social Media -->
       <div class="flex justify-center items-center gap-4 lg:px-52">
         <a
@@ -25,7 +25,7 @@
           />
         </a>
         <a
-          href="https://github.com/BetoNajera9"
+          href="https://github.com/beto-mn"
           target="_blank"
           rel="noopener noreferrer"
           class="transition-opacity hover:opacity-80"
