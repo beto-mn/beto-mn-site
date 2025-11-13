@@ -1,6 +1,6 @@
 <template>
   <div
-    class="carousel-item snap-center md:snap-start shrink-0 basis-full sm:basis-1/2 md:basis-1/3 max-w-[20rem]"
+    class="carousel-item snap-center shrink-0 w-[calc(100vw-3rem)] sm:w-[calc(50%-1rem)] lg:w-auto lg:basis-1/3 lg:max-w-[20rem]"
   >
     <div
       class="card-inner h-full rounded-3xl p-7 text-white font-medium backdrop-blur-sm border border-white/20 shadow-[inset_0_1px_5px_rgba(255,255,255,0.6),_0_20px_25px_-5px_rgba(0,0,0,0.1),_0_10px_10px_-5px_rgba(0,0,0,0.04)] overflow-hidden transition-transform duration-300 will-change-transform"
