@@ -47,7 +47,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const variants = {
   primary:
-    'rounded-full text-white font-medium backdrop-blur-sm border border-white/20 shadow-[inset_0_1px_5px_rgba(255,255,255,0.6),_0_20px_25px_-5px_rgba(0,0,0,0.1),_0_10px_10px_-5px_rgba(0,0,0,0.04)] overflow-hidden transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]',
+    'rounded-full text-white text-center font-medium backdrop-blur-sm border border-white/20 shadow-[inset_0_1px_5px_rgba(255,255,255,0.6),_0_20px_25px_-5px_rgba(0,0,0,0.1),_0_10px_10px_-5px_rgba(0,0,0,0.04)] overflow-hidden transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]',
   gradient:
     'relative p-[1px] rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 hover:from-purple-400 hover:via-pink-400 hover:to-indigo-400 transition cursor-pointer',
 }
@@ -65,7 +65,7 @@ const outerClasses = computed(() =>
 )
 
 const innerSpanClasses = computed(() => [
-  'block rounded-full bg-void-black text-white hover:bg-void-black/80 transition-colors duration-300 cursor-pointer',
+  'block rounded-full bg-void-black text-white text-center hover:bg-void-black/80 transition-colors duration-300 cursor-pointer',
   sizes[props.size],
 ])
 
