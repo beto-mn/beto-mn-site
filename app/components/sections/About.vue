@@ -1,22 +1,22 @@
 <template>
   <section
     id="about"
-    class="relative text-white flex flex-col justify-center items-center overflow-x-hidden overflow-y-visible"
+    class="relative text-white flex flex-col justify-center items-center overflow-y-visible pt-8 pb-14 md:py-24 px-4 sm:px-8"
   >
     <div
-      class="relative flex flex-col items-center justify-center mb-32 text-center"
+      class="relative flex flex-col items-center justify-center mb-16 md:mb-32 text-center"
     >
       <img
         src="/images/memoji-01.svg"
         alt="Beto Roberto Mirón Nájera Memoji"
         aria-hidden="true"
-        class="pointer-events-none select-none absolute top-3 -left-28 w-[8rem] -z-10"
+        class="pointer-events-none select-none absolute -top-16 -left-10 md:-left-14 lg:-left-28 w-[8rem] -z-10 hidden md:block"
       />
       <img
         src="/images/memoji-02.svg"
         alt="Beto Roberto Mirón Nájera Memoji"
         aria-hidden="true"
-        class="pointer-events-none select-none absolute top-36 -right-24 w-[10rem] -z-10"
+        class="pointer-events-none select-none absolute top-52 -right-10 md:-right-14 lg:-right-24 w-[10rem] -z-10 hidden md:block"
       />
 
       <h3 class="text-xl mb-10">
@@ -27,7 +27,7 @@
           I am
         </span>
       </h3>
-      <h1 class="text-4xl font-semibold max-w-3xl">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-semibold max-w-3xl">
         I'm a
         <span
           class="bg-gradient-to-r from-neon-cyan to-cyber-void bg-clip-text text-transparent animate-gradient"
@@ -39,7 +39,9 @@
       </h1>
     </div>
 
-    <div class="relative flex flex-col items-center justify-center">
+    <div
+      class="relative flex flex-col items-center justify-center w-full sm:-mx-8 sm:w-[calc(100%+4rem)]"
+    >
       <div>
         <h3 class="text-xl mb-10">
           What
