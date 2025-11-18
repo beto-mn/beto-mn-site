@@ -1,5 +1,5 @@
 <template>
-  <div class="relative min-h-screen w-full overflow-hidden bg-void-black">
+  <div class="relative min-h-screen w-full bg-void-black [overflow:clip]">
     <div class="absolute inset-0 overflow-hidden">
       <!-- Gradient Orbs -->
       <div
@@ -19,6 +19,7 @@
 
       <sections-hero />
       <sections-about />
+      <sections-contact />
 
       <ui-footer />
     </div>
