@@ -8,11 +8,12 @@
       <div class="flex justify-between items-center py-6 px-4 md:hidden">
         <!-- Logo - Mobile -->
         <div>
-          <a
-            href="#hero"
-            class="text-2xl font-bold text-white hover:text-gray-300 transition-colors"
-          >
-            Beto Najera
+          <a href="#hero" @click="navigateToSection('hero')">
+            <img
+              src="/images/rmn-logo.svg"
+              alt="RMN Logo"
+              class="h-20 w-auto"
+            />
           </a>
         </div>
 
@@ -59,11 +60,12 @@
       <div class="hidden md:grid md:grid-cols-3 md:items-center md:py-4">
         <!-- Logo - Left Column -->
         <div class="justify-self-start">
-          <a
-            href="#hero"
-            class="text-2xl font-bold text-white hover:text-gray-300 transition-colors"
-          >
-            Beto Najera
+          <a href="#hero" @click="scrollToSection('hero')">
+            <img
+              src="/images/rmn-logo.svg"
+              alt="RMN Logo"
+              class="h-24 w-auto"
+            />
           </a>
         </div>
 
