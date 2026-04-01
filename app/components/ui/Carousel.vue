@@ -1,58 +1,73 @@
 <template>
-  <div class="flex w-screen items-center md:px-10 gap-2 md:gap-4">
-    <button
-      type="button"
-      class="hidden md:flex shrink-0 h-12 w-12 items-center justify-center rounded-full text-white font-medium backdrop-blur-sm border border-white/20 shadow-[inset_0_1px_5px_rgba(255,255,255,0.6),_0_20px_25px_-5px_rgba(0,0,0,0.1),_0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:bg-white/10 hover:scale-[1.02] disabled:opacity-40 disabled:cursor-not-allowed"
-      :disabled="!canPrev"
-      aria-label="Previous"
-      @click="prev"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="h-6 w-6"
+  <div class="flex flex-col w-full gap-4">
+    <!-- Track + buttons row -->
+    <div class="flex w-full items-center md:px-10 gap-2 md:gap-4">
+      <button
+        type="button"
+        class="hidden lg:flex shrink-0 h-12 w-12 items-center justify-center rounded-full text-white font-medium backdrop-blur-sm border border-white/20 shadow-[inset_0_1px_5px_rgba(255,255,255,0.6),_0_20px_25px_-5px_rgba(0,0,0,0.1),_0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:bg-white/10 hover:scale-[1.02] disabled:opacity-40 disabled:cursor-not-allowed"
+        :disabled="!canPrev"
+        aria-label="Previous"
+        @click="prev"
       >
-        <path
-          fill-rule="evenodd"
-          d="M15.53 4.47a.75.75 0 0 1 0 1.06L9.06 12l6.47 6.47a.75.75 0 1 1-1.06 1.06l-7-7a.75.75 0 0 1 0-1.06l7-7a.75.75 0 0 1 1.06 0Z"
-          clip-rule="evenodd"
-        />
-      </svg>
-    </button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="h-6 w-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15.53 4.47a.75.75 0 0 1 0 1.06L9.06 12l6.47 6.47a.75.75 0 1 1-1.06 1.06l-7-7a.75.75 0 0 1 0-1.06l7-7a.75.75 0 0 1 1.06 0Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
 
-    <div
-      class="flex-1 md:mx-auto md:max-w-[69rem] px-2 overflow-x-hidden overflow-y-visible"
-    >
       <div
-        ref="track"
-        class="w-full flex gap-16 justify-center md:justify-start overflow-x-auto py-6 md:py-8 scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-        @scroll="onScroll"
+        class="flex-1 md:mx-auto md:max-w-[69rem] px-2 md:px-0 overflow-x-hidden overflow-y-visible"
       >
-        <slot />
+        <div
+          ref="track"
+          class="relative w-full flex gap-8 lg:gap-16 justify-start overflow-x-auto py-6 md:py-8 scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          @scroll="onScroll"
+        >
+          <slot />
+        </div>
       </div>
+
+      <button
+        type="button"
+        class="hidden lg:flex shrink-0 h-12 w-12 items-center justify-center rounded-full text-white font-medium backdrop-blur-sm border border-white/20 shadow-[inset_0_1px_5px_rgba(255,255,255,0.6),_0_20px_25px_-5px_rgba(0,0,0,0.1),_0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:bg-white/10 hover:scale-[1.02] disabled:opacity-40 disabled:cursor-not-allowed"
+        :disabled="!canNext"
+        aria-label="Next"
+        @click="next"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="h-6 w-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8.47 19.53a.75.75 0 0 1 0-1.06L14.94 12 8.47 5.53a.75.75 0 1 1 1.06-1.06l7 7a.75.75 0 0 1 0 1.06l-7 7a.75.75 0 0 1-1.06 0Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
     </div>
 
-    <button
-      type="button"
-      class="hidden md:flex shrink-0 h-12 w-12 items-center justify-center rounded-full text-white font-medium backdrop-blur-sm border border-white/20 shadow-[inset_0_1px_5px_rgba(255,255,255,0.6),_0_20px_25px_-5px_rgba(0,0,0,0.1),_0_10px_10px_-5px_rgba(0,0,0,0.04)] hover:bg-white/10 hover:scale-[1.02] disabled:opacity-40 disabled:cursor-not-allowed"
-      :disabled="!canNext"
-      aria-label="Next"
-      @click="next"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="h-6 w-6"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M8.47 19.53a.75.75 0 0 1 0-1.06L14.94 12 8.47 5.53a.75.75 0 1 1 1.06-1.06l7 7a.75.75 0 0 1 0 1.06l-7 7a.75.75 0 0 1-1.06 0Z"
-          clip-rule="evenodd"
-        />
-      </svg>
-    </button>
+    <!-- Dots: mobile + tablet only -->
+    <div class="flex lg:hidden justify-center gap-2">
+      <button
+        v-for="(_, i) in dotsCount"
+        :key="i"
+        class="rounded-full transition-all duration-300"
+        :class="i === currentIndex ? 'w-6 h-2 bg-white' : 'w-2 h-2 bg-white/30'"
+        :aria-label="`Go to card ${i + 1}`"
+        @click="scrollToIndex(i)"
+      />
+    </div>
   </div>
 </template>
 
@@ -62,50 +77,75 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const track = ref<HTMLElement | null>(null)
 const canPrev = ref(false)
 const canNext = ref(true)
+const currentIndex = ref(0)
+const totalItems = ref(0)
+const dotsCount = ref(0)
 
 let resizeObserver: ResizeObserver | undefined
 let onWindowResize: (() => void) | undefined
 
-const getPositions = () => {
+const getItems = () => {
   const el = track.value
-  if (!el) return [] as number[]
-  const elRect = el.getBoundingClientRect()
-  const items = Array.from(
+  if (!el) return [] as HTMLElement[]
+  return Array.from(
     el.querySelectorAll(':scope > .carousel-item')
   ) as HTMLElement[]
-  return items.map(item => {
-    const r = item.getBoundingClientRect()
-    // position relative to scroll container's content box
-    return Math.round(r.left - elRect.left + el.scrollLeft)
-  })
+}
+
+const DESKTOP_VISIBLE = 3
+
+const getVisibleForScreen = () => {
+  if (typeof window === 'undefined') return 1
+  if (window.innerWidth >= 1024) return DESKTOP_VISIBLE
+  if (window.innerWidth >= 640) return 2
+  return 1
+}
+
+const updateDotsCount = () => {
+  const visible = getVisibleForScreen()
+  dotsCount.value = Math.max(1, totalItems.value - visible + 1)
 }
 
 const updateButtons = () => {
-  const el = track.value
-  if (!el) return
-  const maxScroll = el.scrollWidth - el.clientWidth - 1
-  canPrev.value = el.scrollLeft > 1
-  canNext.value = el.scrollLeft < maxScroll
+  const items = getItems()
+  canPrev.value = currentIndex.value > 0
+  canNext.value = currentIndex.value < items.length - DESKTOP_VISIBLE
 }
 
-const scrollToClosest = (direction: 1 | -1) => {
+const scrollToIndex = (index: number) => {
   const el = track.value
   if (!el) return
+  const items = getItems()
+  const maxIndex = Math.max(0, items.length - getVisibleForScreen())
+  const clamped = Math.max(0, Math.min(index, maxIndex))
+  const target = items[clamped]
+  if (!target) return
+  currentIndex.value = clamped
+  el.scrollTo({ left: target.offsetLeft, behavior: 'smooth' })
+  updateButtons()
+}
+
+// Sync index from manual scroll (touch/swipe)
+const syncIndexFromScroll = () => {
+  const el = track.value
+  if (!el) return
+  const items = getItems()
   const x = el.scrollLeft
-  const positions = getPositions()
-  if (direction > 0) {
-    const nextPos = positions.find(p => p > x + 4)
-    if (nextPos !== undefined)
-      el.scrollTo({ left: nextPos, behavior: 'smooth' })
-  } else {
-    const prevPos = [...positions].reverse().find(p => p < x - 4)
-    if (prevPos !== undefined)
-      el.scrollTo({ left: prevPos, behavior: 'smooth' })
-  }
+  let closest = 0
+  let minDist = Infinity
+  items.forEach((item, i) => {
+    const dist = Math.abs(item.offsetLeft - x)
+    if (dist < minDist) {
+      minDist = dist
+      closest = i
+    }
+  })
+  currentIndex.value = closest
+  updateButtons()
 }
 
-const next = () => scrollToClosest(1)
-const prev = () => scrollToClosest(-1)
+const next = () => scrollToIndex(currentIndex.value + 1)
+const prev = () => scrollToIndex(currentIndex.value - 1)
 
 let rafId: number | null = null
 
@@ -117,8 +157,8 @@ const updateEmphasis = () => {
     el.querySelectorAll(':scope > .carousel-item')
   ) as HTMLElement[]
 
-  // Disable emphasis on screens smaller than 768px: reset styles
-  if (window.innerWidth < 768) {
+  // Disable emphasis on tablet and mobile — only active on desktop
+  if (window.innerWidth < 1024) {
     items.forEach(item => {
       const inner = (item.querySelector('.card-inner') as HTMLElement) || item
       inner.style.transform = 'scale(1)'
@@ -146,23 +186,27 @@ const updateEmphasis = () => {
 }
 
 const onScroll = () => {
-  updateButtons()
+  syncIndexFromScroll()
   if (rafId) cancelAnimationFrame(rafId)
   rafId = requestAnimationFrame(() => updateEmphasis())
 }
 
 onMounted(() => {
+  currentIndex.value = 0
+  totalItems.value = getItems().length
+  updateDotsCount()
   updateButtons()
   updateEmphasis()
-  // Observe size changes to keep buttons state in sync
   if ('ResizeObserver' in window && track.value) {
     resizeObserver = new ResizeObserver(() => {
+      updateDotsCount()
       updateButtons()
       updateEmphasis()
     })
     resizeObserver.observe(track.value)
   }
   onWindowResize = () => {
+    updateDotsCount()
     updateButtons()
     updateEmphasis()
   }

@@ -8,6 +8,11 @@
 /* Import SF Pro from the system (macOS) or fallback */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+html,
+body {
+  background-color: rgb(10 10 10);
+}
+
 html {
   scroll-behavior: smooth;
   font-family:
