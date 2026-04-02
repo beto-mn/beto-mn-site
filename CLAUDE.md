@@ -32,3 +32,7 @@ Common patterns: `backdrop-blur` + semi-transparent borders for glassmorphism; `
 - ESLint enforces PascalCase components and self-closing tags
 - Prettier: single quotes, 2-space indent, 80-char width, trailing commas (es5)
 - Husky runs `eslint --fix` + `prettier --write` on staged files pre-commit
+
+## Deployment
+
+The project builds as a static site (`nuxt generate`) and deploys to an AWS S3 bucket. The S3 bucket is already configured to serve content under the custom domain purchased in AWS.

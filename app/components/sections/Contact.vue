@@ -148,9 +148,9 @@
 </template>
 
 <script setup lang="ts">
-const API_URL =
-  'https://0iz3178srb.execute-api.mx-central-1.amazonaws.com/api/contact'
-const API_KEY = 'CYTB6TAwnPcRFFEVFoBd5E87X6sPTbd8lQG1jzta'
+const config = useRuntimeConfig()
+const contactApiUrl = config.public.contactApiUrl as string
+const contactApiKey = config.public.contactApiKey as string
 
 const isSubmitting = ref(false)
 const isSuccess = ref(false)
@@ -167,11 +167,11 @@ const submitForm = async () => {
   hasError.value = false
 
   try {
-    const res = await fetch(API_URL, {
+    const res = await fetch(contactApiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': API_KEY,
+        'x-api-key': contactApiKey,
       },
       body: JSON.stringify({
         name: form.name.toUpperCase(),
