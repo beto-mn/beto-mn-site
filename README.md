@@ -10,15 +10,30 @@ Personal portfolio site for **Roberto Mirón Nájera** — Full Stack Developer.
 | 🎨 Styling         | Tailwind CSS (custom cyberpunk theme)   |
 | 🔷 Language        | TypeScript                              |
 | ☁️ Contact backend | AWS API Gateway + Lambda (mx-central-1) |
+| 🚢 Hosting         | AWS S3 (static site)                    |
+| ⚙️ CI/CD           | GitHub Actions                          |
 | ✅ Code quality    | ESLint + Prettier + Husky + lint-staged |
 | 📦 Package manager | pnpm                                    |
 
 ## 🚀 Getting Started
 
 ```bash
+cp .env.example .env
+# fill in the values in .env
 pnpm install
 pnpm dev        # http://localhost:3000
 ```
+
+## 🔑 Environment Variables
+
+Create a `.env` file at the root (already gitignored) based on `.env.example`:
+
+| Variable                      | Description                                   |
+| ----------------------------- | --------------------------------------------- |
+| `NUXT_PUBLIC_CONTACT_API_URL` | AWS API Gateway endpoint for the contact form |
+| `NUXT_PUBLIC_CONTACT_API_KEY` | API key for the AWS API Gateway               |
+
+In production these values are injected by GitHub Actions via repository secrets/variables — no `.env` file is needed in CI.
 
 ## 📜 Scripts
 
@@ -77,6 +92,46 @@ Custom Tailwind color palette defined in `tailwind.config.ts`:
 - 🔤 **Font:** SF Pro Display / SF Pro Text
 
 Common patterns: `backdrop-blur` + semi-transparent borders for glassmorphism, `@keyframes gradient-move` for animated gradient text, `@keyframes marquee` for the hero tech strip.
+
+## ⚙️ CI/CD
+
+Two GitHub Actions workflows handle quality checks and deployment.
+
+### CI — Pull Request to `master`
+
+Runs automatically on every PR. Validates:
+
+| Check      | Command              |
+| ---------- | -------------------- |
+| Lint       | `eslint .`           |
+| Format     | `prettier --check .` |
+| Type check | `nuxt typecheck`     |
+| Build      | `nuxt generate`      |
+
+After all steps finish, the bot posts a comment on the PR with a pass/fail table and collapsible error details for any failing check. The comment is updated (not duplicated) on each new push to the branch.
+
+### Deploy — Push / merge to `master`
+
+Runs automatically when code lands on `master`:
+
+1. Runs `nuxt generate` to produce the static output in `.output/public/`
+2. Authenticates to AWS using repository secrets
+3. Syncs the bundle to S3 with `aws s3 sync --delete`:
+   - Static assets (JS, CSS, images) → `Cache-Control: max-age=31536000, immutable`
+   - HTML and JSON files → `Cache-Control: no-cache`
+
+#### Required GitHub secrets and variables
+
+| Type     | Name                          | Description                 |
+| -------- | ----------------------------- | --------------------------- |
+| Secret   | `AWS_ACCESS_KEY_ID`           | IAM access key ID           |
+| Secret   | `AWS_SECRET_ACCESS_KEY`       | IAM secret access key       |
+| Secret   | `NUXT_PUBLIC_CONTACT_API_KEY` | API key for AWS API Gateway |
+| Variable | `AWS_REGION`                  | AWS region of the bucket    |
+| Variable | `S3_BUCKET_NAME`              | Name of the S3 bucket       |
+| Variable | `NUXT_PUBLIC_CONTACT_API_URL` | AWS API Gateway endpoint    |
+
+The IAM user only needs `s3:PutObject`, `s3:DeleteObject`, `s3:ListBucket`, and `s3:GetObject` permissions on the target bucket.
 
 ## 🪝 Git Hooks
 
