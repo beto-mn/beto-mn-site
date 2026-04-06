@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  compatibilityDate: '2026-04-03',
+  devtools: { enabled: process.env.NODE_ENV !== 'prd' },
 
   app: {
     head: {
@@ -10,8 +10,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      contactApiUrl: process.env.NUXT_PUBLIC_CONTACT_API_URL ?? '',
-      contactApiKey: process.env.NUXT_PUBLIC_CONTACT_API_KEY ?? '',
+      contactApiUrl: '',
+      contactApiKey: '',
     },
   },
 
