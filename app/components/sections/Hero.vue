@@ -53,9 +53,13 @@
       <!-- Photo: visible only on mobile, between text and buttons -->
       <div class="relative my-8 md:hidden">
         <div class="absolute inset-0 bg-electric-blue rounded-full blur-3xl" />
-        <img
+        <NuxtImg
           src="/images/photo.jpg"
-          alt="Roberto"
+          alt="Roberto Mirón Nájera"
+          format="webp"
+          loading="eager"
+          width="208"
+          height="208"
           class="relative rounded-full w-52 h-52 object-cover shadow-2xl"
         />
       </div>
@@ -82,9 +86,14 @@
     <!-- Photo: visible only on desktop, right column -->
     <div class="relative hidden md:block">
       <div class="absolute inset-0 bg-electric-blue rounded-full blur-3xl" />
-      <img
+      <NuxtImg
         src="/images/photo.jpg"
-        alt="Roberto"
+        alt="Roberto Mirón Nájera"
+        format="webp"
+        loading="eager"
+        fetchpriority="high"
+        width="320"
+        height="320"
         class="relative rounded-full w-80 h-80 object-cover shadow-2xl"
       />
     </div>

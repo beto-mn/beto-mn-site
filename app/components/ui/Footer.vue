@@ -36,7 +36,7 @@
 
       <!-- Copyright -->
       <div class="pt-8 px-5 text-white">
-        <p>&copy; 2025 Roberto Mirón Nájera. All rights reserved.</p>
+        <p>&copy; 2026 Roberto Mirón Nájera. All rights reserved.</p>
       </div>
     </div>
   </footer>

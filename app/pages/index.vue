@@ -27,16 +27,15 @@
 </template>
 
 <script setup lang="ts">
-// Page meta
-useHead({
-  title: 'Roberto Mirón Nájera',
-  meta: [
-    {
-      name: 'Description',
-      content:
-        'Full Stack Developer passionate about creating exceptional digital experiences with TypeScript, AWS, Node.js, Terraform, and GraphQL.',
-    },
-  ],
+useSeoMeta({
+  title: 'Roberto Mirón Nájera | Full Stack Developer',
+  description:
+    'Full Stack Developer passionate about creating exceptional digital experiences with TypeScript, AWS, Node.js, Terraform, and GraphQL.',
+  ogTitle: 'Roberto Mirón Nájera | Full Stack Developer',
+  ogDescription:
+    'Full Stack Developer passionate about creating exceptional digital experiences with TypeScript, AWS, Node.js, Terraform, and GraphQL.',
+  ogImage: '/images/photo.jpg',
+  twitterCard: 'summary_large_image',
 })
 </script>
 

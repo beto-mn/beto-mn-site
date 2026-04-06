@@ -1,17 +1,29 @@
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  compatibilityDate: '2026-04-03',
+  devtools: { enabled: process.env.NODE_ENV !== 'prd' },
 
   app: {
     head: {
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: '',
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap',
+        },
+      ],
     },
   },
 
   runtimeConfig: {
     public: {
-      contactApiUrl: process.env.NUXT_PUBLIC_CONTACT_API_URL ?? '',
-      contactApiKey: process.env.NUXT_PUBLIC_CONTACT_API_KEY ?? '',
+      contactApiUrl: '',
+      contactApiKey: '',
     },
   },
 
@@ -19,6 +31,7 @@ export default defineNuxtConfig({
     // '@nuxtjs/storybook'
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
+    '@nuxt/image',
   ],
 
   components: true,

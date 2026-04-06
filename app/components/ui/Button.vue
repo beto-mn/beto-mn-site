@@ -43,6 +43,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   variant: 'primary',
   size: 'lg',
+  rel: 'noopener noreferrer',
 })
 
 const variants = {
