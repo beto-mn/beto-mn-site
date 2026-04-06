@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed top-0 w-full bg-transpartent z-50 transition-transform duration-500 ease-in-out"
+    class="fixed top-0 w-full bg-transparent z-50 transition-transform duration-500 ease-in-out"
     :class="[isHeaderVisible ? 'translate-y-0' : '-translate-y-full']"
   >
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
