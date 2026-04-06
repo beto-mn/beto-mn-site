@@ -39,8 +39,6 @@
 </template>
 
 <script setup lang="ts">
-import { toRefs } from 'vue'
-
 interface Props {
   title: string
   description: string
@@ -48,7 +46,5 @@ interface Props {
   tag: string[]
 }
 
-const props = defineProps<Props>()
-
-const { title, description, stack, tag } = toRefs(props)
+defineProps<Props>()
 </script>
