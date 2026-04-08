@@ -10,7 +10,13 @@
           rel="noopener noreferrer"
           class="transition-opacity hover:opacity-80"
         >
-          <img src="/images/logos/x.svg" alt="X Logo" width="40" height="40" class="h-10" />
+          <img
+            src="/images/logos/x.svg"
+            alt="X Logo"
+            width="40"
+            height="40"
+            class="h-10"
+          />
         </a>
         <a
           href="https://www.linkedin.com/in/roberto-miron-najera-287a06207"
@@ -32,7 +38,13 @@
           rel="noopener noreferrer"
           class="transition-opacity hover:opacity-80"
         >
-          <img src="/images/logos/github.svg" alt="GitHub Logo" width="40" height="40" class="h-10" />
+          <img
+            src="/images/logos/github.svg"
+            alt="GitHub Logo"
+            width="40"
+            height="40"
+            class="h-10"
+          />
         </a>
       </div>
 

@@ -68,7 +68,9 @@
       >
         <span
           class="rounded-full transition-all duration-300"
-          :class="i === currentIndex ? 'w-6 h-2 bg-white' : 'w-2 h-2 bg-white/30'"
+          :class="
+            i === currentIndex ? 'w-6 h-2 bg-white' : 'w-2 h-2 bg-white/30'
+          "
         />
       </button>
     </div>
