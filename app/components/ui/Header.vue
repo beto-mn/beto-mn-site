@@ -12,6 +12,8 @@
             <img
               src="/images/rmn-logo.svg"
               alt="RMN Logo"
+              width="80"
+              height="80"
               class="h-20 w-auto"
             />
           </a>
@@ -64,6 +66,8 @@
             <img
               src="/images/rmn-logo.svg"
               alt="RMN Logo"
+              width="96"
+              height="96"
               class="h-24 w-auto"
             />
           </a>

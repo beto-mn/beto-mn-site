@@ -58,6 +58,7 @@
           alt="Roberto Mirón Nájera"
           format="webp"
           loading="eager"
+          fetchpriority="high"
           width="208"
           height="208"
           class="relative rounded-full w-52 h-52 object-cover shadow-2xl"
