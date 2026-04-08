@@ -4,6 +4,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      htmlAttrs: { lang: 'en' },
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -13,8 +14,10 @@ export default defineNuxtConfig({
           crossorigin: '',
         },
         {
-          rel: 'stylesheet',
+          rel: 'preload',
+          as: 'style',
           href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap',
+          onload: "this.onload=null;this.rel='stylesheet'",
         },
       ],
     },

@@ -10,24 +10,28 @@
         src="/images/memoji-01.svg"
         alt="Beto Roberto Mirón Nájera Memoji"
         aria-hidden="true"
+        width="128"
+        height="128"
         class="pointer-events-none select-none absolute -top-16 -left-10 md:-left-14 lg:-left-28 w-[8rem] -z-10 hidden md:block"
       />
       <img
         src="/images/memoji-02.svg"
         alt="Beto Roberto Mirón Nájera Memoji"
         aria-hidden="true"
+        width="160"
+        height="160"
         class="pointer-events-none select-none absolute top-52 -right-10 md:-right-14 lg:-right-24 w-[10rem] -z-10 hidden md:block"
       />
 
-      <h3 class="text-xl mb-10">
+      <p class="text-xl mb-10">
         Who
         <span
           class="font-bold bg-gradient-to-r from-cyber-void to-neon-cyan bg-clip-text text-transparent animate-gradient"
         >
           I am
         </span>
-      </h3>
-      <h1 class="text-2xl sm:text-3xl md:text-4xl font-semibold max-w-3xl">
+      </p>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold max-w-3xl">
         I'm a
         <span
           class="bg-gradient-to-r from-neon-cyan to-cyber-void bg-clip-text text-transparent animate-gradient"
@@ -36,21 +40,21 @@
         </span>
         passionate about crafting reliable solutions that blend strong
         performance with great user experiences.
-      </h1>
+      </h2>
     </div>
 
     <div
       class="relative flex flex-col items-center justify-center w-full sm:-mx-8 sm:w-[calc(100%+4rem)]"
     >
       <div>
-        <h3 class="text-xl mb-10">
+        <h2 class="text-xl mb-10">
           What
           <span
             class="font-bold bg-gradient-to-r from-cyber-void to-neon-cyan bg-clip-text text-transparent animate-gradient"
           >
             I do
           </span>
-        </h3>
+        </h2>
       </div>
 
       <!-- Skills Carousel -->
